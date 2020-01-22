@@ -2,6 +2,6 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-export default function SingUp() {
+export default function Dashborard() {
   return <div />;
 }
