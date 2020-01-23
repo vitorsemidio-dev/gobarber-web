@@ -9,7 +9,7 @@ export default function SingIn() {
     <>
       <img src={logo} alt="Logo GoBarber" />
 
-      <form action="">
+      <form>
         <input type="email" placeholder="Seu e-mail" />
         <input type="password" placeholder="Sua senha" />
 
