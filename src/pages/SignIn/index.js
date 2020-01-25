@@ -12,7 +12,7 @@ const schema = Yup.object().shape({
   password: Yup.string().required('A senha é obrigatória'),
 });
 
-export default function SingIn() {
+export default function SignIn() {
   function handleSubmit(data) {
     console.tron.log(data);
   }
