@@ -15,7 +15,7 @@ const schema = Yup.object().shape({
   name: Yup.string().required('O nome é obrigatório'),
 });
 
-export default function SingUp() {
+export default function SignUp() {
   function handleSumit(data) {
     console.tron.log(data);
   }
