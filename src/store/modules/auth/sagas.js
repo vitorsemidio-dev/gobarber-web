@@ -20,7 +20,7 @@ export function* signIn({ payload }) {
     return;
   }
 
-  yield put(signInSuccess);
+  yield put(signInSuccess(token, user));
 
   history.push('/dashboard');
 }
