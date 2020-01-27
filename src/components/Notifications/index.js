@@ -47,41 +47,13 @@ export default function Notifications() {
 
       <NotificationsList visible={visible}>
         <Scroll>
-          <Notification unread>
-            <p>Você possui um novo agendamento</p>
-            <time>Há dois dias</time>
-            <button type="button">Marcar como lida</button>
-          </Notification>
-          <Notification>
-            <p>Você possui um novo agendamento</p>
-            <time>Há dois dias</time>
-            <button type="button">Marcar como lida</button>
-          </Notification>
-          <Notification>
-            <p>Você possui um novo agendamento</p>
-            <time>Há dois dias</time>
-            <button type="button">Marcar como lida</button>
-          </Notification>
-          <Notification>
-            <p>Você possui um novo agendamento</p>
-            <time>Há dois dias</time>
-            <button type="button">Marcar como lida</button>
-          </Notification>
-          <Notification>
-            <p>Você possui um novo agendamento</p>
-            <time>Há dois dias</time>
-            <button type="button">Marcar como lida</button>
-          </Notification>
-          <Notification>
-            <p>Você possui um novo agendamento</p>
-            <time>Há dois dias</time>
-            <button type="button">Marcar como lida</button>
-          </Notification>
-          <Notification>
-            <p>Você possui um novo agendamento</p>
-            <time>Há dois dias</time>
-            <button type="button">Marcar como lida</button>
-          </Notification>
+          {notifications.map(notification => (
+            <Notification key={notification._id} unread={!notification.read}>
+              <p>{notification.content}</p>
+              <time>{notification.timeDistance}</time>
+              <button type="button">Marcar como lida</button>
+            </Notification>
+          ))}
         </Scroll>
       </NotificationsList>
     </Container>
