@@ -77,4 +77,17 @@ export const Notification = styled.div`
     padding: 0 5px;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+  ${props =>
+    props.unread &&
+    css`
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: #ff892e;
+        border-radius: 50%;
+      }
+    `}
 `;
