@@ -39,6 +39,16 @@ export default function Notifications() {
   function handleToggleVisible() {
     setVisible(!visible);
   }
+
+  async function handleMarkAsRead(id) {
+    await api.put(`notifications/${id}`);
+
+    setNotifications(
+      notifications.map(notification =>
+        notification._id === id ? { ...notification, read: true } : notification
+      )
+    );
+  }
   return (
     <Container>
       <Badge onClick={handleToggleVisible} hasUnread>
