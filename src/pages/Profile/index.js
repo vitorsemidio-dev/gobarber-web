@@ -23,7 +23,11 @@ export default function Profile() {
           name="confirmPassword"
           placeholder="Confirmação de senha"
         />
+
+        <button type="submit">Atualizar perfil</button>
       </Form>
+
+      <button type="button">Sair do GoBarber</button>
     </Container>
   );
 }
