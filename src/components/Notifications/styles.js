@@ -52,6 +52,12 @@ export const NotificationsList = styled.div`
 export const Notification = styled.div`
   color: #fff;
 
+  & + div {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
   p {
     font-size: 13px;
     line-height: 18px;
