@@ -91,3 +91,5 @@ export const Notification = styled.div`
       }
     `}
 `;
+
+export const Scroll = styled.div``;
