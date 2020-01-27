@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import { MdNotifications } from 'react-icons/md';
+
+import api from '~/services/api';
 
 import {
   Container,
@@ -12,6 +13,17 @@ import {
 
 export default function Notifications() {
   const [visible, setVisible] = useState(false);
+  const [notifications, setNotifications] = useState([]);
+
+  useEffect(() => {
+    async function loadNotifications() {
+      const response = await api.get('notifications');
+
+      setNotifications(response.data);
+    }
+
+    loadNotifications();
+  }, []);
 
   function handleToggleVisible() {
     setVisible(!visible);
