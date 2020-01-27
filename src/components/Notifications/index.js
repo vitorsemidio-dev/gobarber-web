@@ -22,7 +22,7 @@ export default function Notifications() {
         <MdNotifications color="#7159c1" size={20} />
       </Badge>
 
-      <NotificationsList>
+      <NotificationsList visible={visible}>
         <Scroll>
           <Notification unread>
             <p>Você possui um novo agendamento</p>
