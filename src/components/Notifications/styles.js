@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { lighten } from 'polished';
 
 export const Container = styled.div`
   position: relative;
@@ -48,4 +49,26 @@ export const NotificationsList = styled.div`
   }
 `;
 
-export const Notification = styled.div``;
+export const Notification = styled.div`
+  color: #fff;
+
+  p {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  time {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+
+  button {
+    font-size: 12px;
+    border: 0;
+    background: none;
+    color: ${lighten(0.2, '#7159c1')};
+    margin: 0 5px;
+    padding: 0 5px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+`;
