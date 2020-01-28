@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useField } from '@rocketseat/unform';
 
 import api from '~/services/api';
@@ -11,6 +11,16 @@ export default function AvatarInput() {
   const [preview, setPreview] = useState(defaultValue && defaultValue.url);
 
   const ref = useRef();
+
+  useEffect(() => {
+    if (ref.current) {
+      registerField({
+        name: 'avatar_id',
+        ref: ref.current,
+        path: 'dataset.file',
+      });
+    }
+  }, [ref, registerField]);
 
   async function handleChange(e) {
     const data = new FormData();
@@ -26,7 +36,12 @@ export default function AvatarInput() {
   return (
     <Container>
       <label htmlFor="avatar">
-        <img src="" alt="" />
+        <img
+          src={
+            preview || 'https://api.adorable.io/avatars/50/abott@adorable.png'
+          }
+          alt="Avatar Usuário"
+        />
 
         <input
           accept="image/*"
