@@ -7,6 +7,7 @@ import { Container } from './styles';
 
 export default function AvatarInput() {
   const { defaultValue, registerField } = useField('avatar');
+
   const [file, setFile] = useState(defaultValue && defaultValue.id);
   const [preview, setPreview] = useState(defaultValue && defaultValue.url);
 
@@ -44,12 +45,12 @@ export default function AvatarInput() {
         />
 
         <input
-          accept="image/*"
-          onChange={handleChange}
           type="file"
           id="avatar"
+          accept="image/*"
           data-file={file}
-          ref={ref}
+          onChange={handleChange}
+          // ref={ref}
         />
       </label>
     </Container>
