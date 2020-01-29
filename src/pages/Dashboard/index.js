@@ -1,11 +1,10 @@
 import React from 'react';
-import api from '~/services/api';
-
-import Profile from '~/pages/Profile';
 
 // import { Container } from './styles';
+import api from '~/services/api';
 
-export default function Dashborard() {
+export default function Dashboard() {
   api.get('appointments');
-  return <Profile />;
+
+  return <h1>Dashboard</h1>;
 }

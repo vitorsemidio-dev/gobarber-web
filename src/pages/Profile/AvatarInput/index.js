@@ -28,7 +28,9 @@ export default function AvatarInput() {
 
     data.append('file', e.target.files[0]);
 
-    const { id, url } = await api.post('files', data);
+    const response = await api.post('files', data);
+
+    const { id, url } = response.data;
 
     setFile(id);
     setPreview(url);
@@ -50,7 +52,7 @@ export default function AvatarInput() {
           accept="image/*"
           data-file={file}
           onChange={handleChange}
-          // ref={ref}
+          ref={ref}
         />
       </label>
     </Container>
