@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
-import { Container } from './styles';
+import { Container, Time } from './styles';
 import api from '~/services/api';
 
 export default function Dashboard() {
@@ -16,6 +16,33 @@ export default function Dashboard() {
           <MdChevronRight size={36} color="#FFF" />
         </button>
       </header>
+
+      <ul>
+        <Time past>
+          <strong>
+            08:00
+            <span>Angel</span>
+          </strong>
+        </Time>
+        <Time available>
+          <strong>
+            09:00
+            <span>Em aberto</span>
+          </strong>
+        </Time>
+        <Time>
+          <strong>
+            10:00
+            <span>Frawio</span>
+          </strong>
+        </Time>
+        <Time>
+          <strong>
+            11:00
+            <span>Michelle</span>
+          </strong>
+        </Time>
+      </ul>
     </Container>
   );
 }
