@@ -37,9 +37,11 @@ export const Time = styled.li`
   border-radius: 4px;
   background: #fff;
 
+  opacity: ${props => (props.past ? 0.6 : 1)};
+
   strong {
     display: block;
-    color: #7159c1;
+    color: ${props => (props.available ? '#999' : '#7159c1')};
     font-size: 20px;
     font-weight: normal;
   }
@@ -47,6 +49,6 @@ export const Time = styled.li`
   span {
     display: block;
     margin-top: 3px;
-    color: #666;
+    color: ${props => (props.available ? '#999' : '#666')};
   }
 `;
