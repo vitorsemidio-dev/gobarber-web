@@ -51,6 +51,8 @@ export default function Dashboard() {
 
       setSchedule(data);
     }
+
+    loadSchedule();
   }, [date]);
 
   function handlePrevDay() {
@@ -72,30 +74,16 @@ export default function Dashboard() {
       </header>
 
       <ul>
-        <Time past>
-          <strong>
-            08:00
-            <span>Angel</span>
-          </strong>
-        </Time>
-        <Time available>
-          <strong>
-            09:00
-            <span>Em aberto</span>
-          </strong>
-        </Time>
-        <Time>
-          <strong>
-            10:00
-            <span>Frawio</span>
-          </strong>
-        </Time>
-        <Time>
-          <strong>
-            11:00
-            <span>Michelle</span>
-          </strong>
-        </Time>
+        {schedule.map(time => (
+          <Time key={time.time} past={time.past} available={!time.appointment}>
+            <strong>
+              {time.time}
+              <span>
+                {time.appointment ? time.appointment.user.name : 'Em aberto'}
+              </span>
+            </strong>
+          </Time>
+        ))}
       </ul>
     </Container>
   );
